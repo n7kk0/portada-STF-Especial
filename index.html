@@ -32,7 +32,6 @@
       overflow: hidden;
       flex-direction: column;
   align-items: center;
-  gap: 20px;
     }
 
 
@@ -43,24 +42,22 @@
 .fila1, .fila2, .fila3 {
   display: flex;
   justify-content: center;
-  gap: 5px;
-  
 }
 
 /* Estilos base para todas las imágenes */
 .portada img {
   width: 150px;
   height: auto;
-  display: block; /* Elimina espacio extra debajo */
+  display: block; 
 }
 
 .fila1 img {
-  width: 300px; /* Más grande el primer botón */
+  width: 300px; 
 }
 
 .fila2 img,
 .fila3 img {
-  width: 200px; /* Más pequeños los otros */
+  width: 120px; 
 }
   
 .fila1 a,
@@ -82,38 +79,45 @@
       transform: scale(1.2);
     }
 
-
-    /* ====== FONDO PARA TABLET ====== */
-    @media (max-width: 1024px) {
-      .portada {
-        background-image: url("imgs/fondo-compu.jpg"); /* imagen para tablets */
-      }
-    }
-
-
-    /* ====== MOBILE ====== */
-    
-      @media (max-width: 600px) {
+/* ====== VERSIÓN MOBILE ====== */
+@media (max-width: 768px) {
   .portada {
-    background-image: url("imgs/fondo-compu.jpg");
+    padding: 5px !important; 
+    height: auto !important; 
+    min-height: 100vh; 
   }
 
-  /* Cambiamos fila a columna */
+  /* Cambiamos filas a columna */
   .fila1, .fila2, .fila3 {
     flex-direction: column;
     align-items: center;
-    gap: 1px; 
     width: 100%;
   }
 
-  /* Reducir tamaño de imágenes */
-  .fila1 img,
-  .fila2 img,
-  .fila3 img {
-    width: 110px;
+  .portada img {
+    width: 80%; 
+    max-width: 280px; 
   }
+
+  .fila1 img, .fila2 img, .fila3 img {
+    margin: 0;
+    padding: 0;
+    display: block; /* Elimina espacio fantasma debajo de la imagen */
+  }
+
+  /* Espacio entre botones dentro de cada fila */
+  .fila1 a, .fila2 a, .fila3 a {
+        margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     
-  .fila1 a:nth-child(1) img {
+  }
+
+ 
+
+   .fila1 a:nth-child(1) img {
         content: url("imgs/imgs_mobile/boton-consigna-mobile.png");
       }
       .fila2 a:nth-child(1) img {
@@ -134,7 +138,34 @@
       .fila3 a:nth-child(2) img {
         content: url("imgs/imgs_mobile/boton-material-mobile.png");
       }
-    }
+
+      .fila1 a:nth-child(1) img,
+       .fila3 a:nth-child(1) img,
+       .fila2 a:nth-child(1) img,
+       .fila2 a:nth-child(2) img,
+       .fila2 a:nth-child(3) img,
+       .fila2 a:nth-child(4) img,
+       .fila3 a:nth-child(2) img {
+        width: 33% !important; 
+    max-width: 200px !important;
+  }
+}
+
+/* ====== TABLETS (punto intermedio) ====== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .portada {
+    gap: 5px;
+  }
+
+  .portada img {
+    width: 120px; /* Intermedio entre mobile y desktop */
+  }
+
+  .fila1 img {
+    width: 250px;
+  }
+}
+  
   </style>
 </head>
 <body>
@@ -165,7 +196,7 @@
     <!-- Tercera fila: 2 botones -->
     <div class="fila3">
       <a href="https://isep-cba.edu.ar/campus/mod/url/view.php?id=20568" target="_blank">
-        <img src="imgs/boton-mesa.png" alt="Icono 6" style="margin-top: 22px;">
+        <img src="imgs/boton-mesa.png" alt="Icono 6">
       </a>
       <a href="https://isep-cba.edu.ar/campus/mod/url/view.php?id=20568" target="_blank">
         <img src="imgs/boton-material.png" alt="Icono 7"> 
