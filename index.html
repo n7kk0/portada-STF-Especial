@@ -57,7 +57,7 @@
 
 .fila2 img,
 .fila3 img {
-  width: 120px; 
+  width: 180px; 
 }
   
 .fila1 a,
@@ -82,72 +82,70 @@
 /* ====== VERSIÓN MOBILE ====== */
 @media (max-width: 768px) {
   .portada {
-    padding: 5px !important; 
-    height: auto !important; 
-    min-height: 100vh; 
+    padding: 5px;
+    height: auto;
+    min-height: 100vh;
+    gap: 0; /* sin separación entre filas */
   }
 
-  /* Cambiamos filas a columna */
   .fila1, .fila2, .fila3 {
     flex-direction: column;
-        gap: 1rem;
+    align-items: center;
+    gap: 2px; /* espacio mínimo entre botones */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fila1 a, .fila2 a, .fila3 a {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    line-height: 0;
   }
 
   .portada img {
-    width: 110px; 
-    max-width: 280px; 
-  }
-
-  .fila1 img, .fila2 img, .fila3 img {
+    width: auto;
+    max-width: 80%; /* ajustable */
+    height: auto;
     margin: 0;
     padding: 0;
-    display: block; /* Elimina espacio fantasma debajo de la imagen */
+    display: block;
   }
 
-  /* Espacio entre botones dentro de cada fila */
-  .fila1 a, .fila2 a, .fila3 a {
-        margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    
+  /* Tamaños específicos para móvil */
+  .fila1 img {
+    max-width: 250px;
+  }
+  .fila2 img, .fila3 img {
+    max-width: 150px;
   }
 
- 
-
-   .fila1 a:nth-child(1) img {
-        content: url("imgs/imgs_mobile/boton-consigna-mobile.png");
-      }
-      .fila2 a:nth-child(1) img {
-        content: url("imgs/imgs_mobile/boton-tiempo1-mobile.png");
-      }
-      .fila2 a:nth-child(2) img {
-        content: url("imgs/imgs_mobile/boton-tiempo2-mobile.png");
-      }
-      .fila2 a:nth-child(3) img {
-        content: url("imgs/imgs_mobile/boton-tiempo3-mobile.png");
-      }
-      .fila2 a:nth-child(4) img {
-        content: url("imgs/imgs_mobile/boton-revision-mobile.png");
-      }
-      .fila3 a:nth-child(1) img {
-        content: url("imgs/imgs_mobile/boton-mesa-mobile.png");
-      }
-      .fila3 a:nth-child(2) img {
-        content: url("imgs/imgs_mobile/boton-material-mobile.png");
-      }
-
-      .fila1 a:nth-child(1) img,
-       .fila3 a:nth-child(1) img,
-       .fila2 a:nth-child(1) img,
-       .fila2 a:nth-child(2) img,
-       .fila2 a:nth-child(3) img,
-       .fila2 a:nth-child(4) img,
-       .fila3 a:nth-child(2) img {
-        width: 33% !important; 
-    max-width: 200px !important;
+  /* Reemplazo de imágenes */
+  .fila1 a:nth-child(1) img {
+    content: url("imgs/imgs_mobile/boton-consigna-mobile.png");
   }
+  .fila2 a:nth-child(1) img {
+    content: url("imgs/imgs_mobile/boton-tiempo1-mobile.png");
+  }
+  .fila2 a:nth-child(2) img {
+    content: url("imgs/imgs_mobile/boton-tiempo2-mobile.png");
+  }
+  .fila2 a:nth-child(3) img {
+    content: url("imgs/imgs_mobile/boton-tiempo3-mobile.png");
+  }
+  .fila2 a:nth-child(4) img {
+    content: url("imgs/imgs_mobile/boton-revision-mobile.png");
+  }
+  .fila3 a:nth-child(1) img {
+    content: url("imgs/imgs_mobile/boton-mesa-mobile.png");
+  }
+  .fila3 a:nth-child(2) img {
+    content: url("imgs/imgs_mobile/boton-material-mobile.png");
+  }
+}
 }
 
 /* ====== TABLETS (punto intermedio) ====== */
