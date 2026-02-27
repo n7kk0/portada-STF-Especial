@@ -87,54 +87,101 @@
     /* ====== FONDO PARA TABLET ====== */
     @media (max-width: 1024px) {
       .portada {
-        background-image: url("imgs/fondo-compu.jpg"); /* imagen para tablets */
+        background-image: url("imgs/imgs_mobile/fondo-mobile.jpg"); /* imagen para tablets */
       }
     }
 
 
-    /* ====== MOBILE ====== */
-   /* ====== MOBILE ====== */
-@media (max-width: 600px) {
+   @media (max-width: 600px) {
+  .fila1, .fila2, .fila3 {
+    display: contents; 
+  }
+
   .portada {
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 4px; 
+    align-items: center;
+    justify-items: center;
     padding: 10px;
   }
 
-  .fila1, .fila2, .fila3 {
-    gap: 5px;
-    flex-wrap: wrap;
-    justify-content: center;
+  /* Colocamos cada enlace en su celda */
+  .fila1 a:nth-child(1) {
+    grid-column: 1 / -1; /* Ocupa las dos columnas en la primera fila */
+    grid-row: 1;
   }
 
-  .fila1 img {
-    width: 80%;
-    max-width: 250px;
+  .fila2 a:nth-child(1) { /* segundo icono */
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .fila2 a:nth-child(2) { /* tercer icono */
+    grid-column: 2;
+    grid-row: 2;
   }
 
-  .fila2 img,
-  .fila3 img {
-    width: 90px; /* Un poco más pequeño para asegurar */
-    max-width: 90px;
+  .fila2 a:nth-child(3) { /* cuarto icono */
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .fila2 a:nth-child(4) { /* quinto icono */
+    grid-column: 2;
+    grid-row: 3;
   }
 
-  /* Eliminamos el margin-top del botón de mesa si molesta */
-  .fila3 a:first-child img {
-    margin-top: 0 !important; /* Anula el estilo inline */
+  .fila3 a:nth-child(1) { /* sexto icono */
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .fila3 a:nth-child(2) { /* séptimo icono */
+    grid-column: 2;
+    grid-row: 4;
+  }
+
+  /* Ajustamos tamaños de imagen para que quepan */
+  .portada img {
+    width: 100%;  /* Que ocupen el ancho de la celda */
+    max-width: 120px; /* Tamaño máximo para que no se agranden demasiado */
+    height: auto;
+  }
+
+  /* Eliminamos márgenes innecesarios */
+  .fila1 a, .fila2 a, .fila3 a {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ajustamos el margin-top del botón mesa si sigue causando espacio */
+  .fila3 a:nth-child(1) img {
+    margin-top: 0 !important;
+  }
+
+  /* Reemplazo de imágenes mobile (ajusta las rutas) */
+  .fila1 a:nth-child(1) img {
+    content: url("imgs/imgs_mobile/boton-consigna-mobile.png");
+  }
+  .fila2 a:nth-child(1) img {
+    content: url("imgs/imgs_mobile/boton-tiempo1-mobile.png");
+  }
+  .fila2 a:nth-child(2) img {
+    content: url("imgs/imgs_mobile/boton-tiempo2-mobile.png");
+  }
+  .fila2 a:nth-child(3) img {
+    content: url("imgs/imgs_mobile/boton-tiempo3-mobile.png");
+  }
+  .fila2 a:nth-child(4) img {
+    content: url("imgs/imgs_mobile/boton-revision-mobile.png");
+  }
+  .fila3 a:nth-child(1) img {
+    content: url("imgs/imgs_mobile/boton-mesa-mobile.png");
+  }
+  .fila3 a:nth-child(2) img {
+    content: url("imgs/imgs_mobile/boton-material-mobile.png");
   }
 }
 
-/* ====== MOBILE MUY PEQUEÑO ====== */
-@media (max-width: 480px) {
-  .fila2 img,
-  .fila3 img {
-    width: 75px; /* Aún más pequeños */
-    max-width: 75px;
-  }
 
-  .fila1 img {
-    max-width: 200px;
-  }
-}
   </style>
 </head>
 <body>
