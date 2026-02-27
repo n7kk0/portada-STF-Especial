@@ -30,8 +30,10 @@
       align-items: center;
       position: relative;
       overflow: hidden;
-      flex-direction: column;
+      display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 20px;
     }
 
 
@@ -42,22 +44,24 @@
 .fila1, .fila2, .fila3 {
   display: flex;
   justify-content: center;
+  gap: 5px;
+  
 }
 
 /* Estilos base para todas las imágenes */
 .portada img {
   width: 150px;
   height: auto;
-  display: block; 
+  display: block; /* Elimina espacio extra debajo */
 }
 
 .fila1 img {
-  width: 300px; 
+  width: 300px; /* Más grande el primer botón */
 }
 
 .fila2 img,
 .fila3 img {
-  width: 180px; 
+  width: 200px; /* Más pequeños los otros */
 }
   
 .fila1 a,
@@ -79,92 +83,51 @@
       transform: scale(1.2);
     }
 
-/* ====== VERSIÓN MOBILE ====== */
-@media (max-width: 768px) {
-  .portada {
-    padding: 5px;
-    height: auto;
-    min-height: 100vh;
-    gap: 0; /* sin separación entre filas */
-  }
 
-  .fila1, .fila2, .fila3 {
-    flex-direction: column;
-    align-items: center;
-    gap: 2px; /* espacio mínimo entre botones */
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .fila1 a, .fila2 a, .fila3 a {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    line-height: 0;
-  }
-
-  .portada img {
-    width: auto;
-    max-width: 80%; /* ajustable */
-    height: auto;
-    margin: 0;
-    padding: 0;
-    display: block;
-  }
-
-  /* Tamaños específicos para móvil */
-  .fila1 img {
-    max-width: 250px;
-  }
-  .fila2 img, .fila3 img {
-    max-width: 150px;
-  }
-
-  /* Reemplazo de imágenes */
-  .fila1 a:nth-child(1) img {
-    content: url("imgs/imgs_mobile/boton-consigna-mobile.png");
-  }
-  .fila2 a:nth-child(1) img {
-    content: url("imgs/imgs_mobile/boton-tiempo1-mobile.png");
-  }
-  .fila2 a:nth-child(2) img {
-    content: url("imgs/imgs_mobile/boton-tiempo2-mobile.png");
-  }
-  .fila2 a:nth-child(3) img {
-    content: url("imgs/imgs_mobile/boton-tiempo3-mobile.png");
-  }
-  .fila2 a:nth-child(4) img {
-    content: url("imgs/imgs_mobile/boton-revision-mobile.png");
-  }
-  .fila3 a:nth-child(1) img {
-    content: url("imgs/imgs_mobile/boton-mesa-mobile.png");
-  }
-  .fila3 a:nth-child(2) img {
-    content: url("imgs/imgs_mobile/boton-material-mobile.png");
-  }
-}
+    /* ====== FONDO PARA TABLET ====== */
+    @media (max-width: 1024px) {
+      .portada {
+        background-image: url("imgs/fondo-compu.jpg"); /* imagen para tablets */
+      }
+    }
 
 
-/* ====== TABLETS (punto intermedio) ====== */
-/* ====== TABLETS (punto intermedio) ====== */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .portada {
-    gap: 5px;
-  }
+    /* ====== MOBILE ====== */
+    @media (max-width: 600px) {
+      .portada {
+        background-image: url("imgs/fondo-compu.jpg"); /* Mobile */
+      }
 
-  .fila1 img {
-    width: 250px;   
-  }
+      .iconos img {
+        width: 110px; /* Tamaño reducido */
+      }
 
-  .fila2 img,
-  .fila3 img {
-    width: 180px;   
-  }
-}
-  
+
+      /* Reemplazo de imágenes con versión mobile */
+      .iconos a:nth-child(1) img {
+        content: url("Guadaprueba2/puntolectura2small.png");
+      }
+      .iconos a:nth-child(2) img {
+        content: url("Guadaprueba2/parada1small.png");
+      }
+      .iconos a:nth-child(3) img {
+        content: url("Guadaprueba2/parada2small.png");
+      }
+      .iconos a:nth-child(4) img {
+        content: url("Guadaprueba2/parada3small.png");
+      }
+      .iconos a:nth-child(5) img {
+        content: url("Guadaprueba2/puntoencuentro2small.png");
+      }
+    }
+
+
+    /* ====== MOBILE MUY PEQUEÑO ====== */
+    @media (max-width: 480px) {
+      .iconos img {
+        width: 80px; /* íconos aún más chicos */
+      }
+    }
   </style>
 </head>
 <body>
@@ -195,7 +158,7 @@
     <!-- Tercera fila: 2 botones -->
     <div class="fila3">
       <a href="https://isep-cba.edu.ar/campus/mod/url/view.php?id=20568" target="_blank">
-        <img src="imgs/boton-mesa.png" alt="Icono 6">
+        <img src="imgs/boton-mesa.png" alt="Icono 6" style="margin-top: 22px;">
       </a>
       <a href="https://isep-cba.edu.ar/campus/mod/url/view.php?id=20568" target="_blank">
         <img src="imgs/boton-material.png" alt="Icono 7"> 
