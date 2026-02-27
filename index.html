@@ -93,41 +93,48 @@
 
 
     /* ====== MOBILE ====== */
-    @media (max-width: 600px) {
-      .portada {
-        background-image: url("imgs/fondo-compu.jpg"); /* Mobile */
-      }
+   /* ====== MOBILE ====== */
+@media (max-width: 600px) {
+  .portada {
+    gap: 10px;
+    padding: 10px;
+  }
 
-      .iconos img {
-        width: 110px; /* Tamaño reducido */
-      }
+  .fila1, .fila2, .fila3 {
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
+  .fila1 img {
+    width: 80%;
+    max-width: 250px;
+  }
 
-      /* Reemplazo de imágenes con versión mobile */
-      .iconos a:nth-child(1) img {
-        content: url("Guadaprueba2/puntolectura2small.png");
-      }
-      .iconos a:nth-child(2) img {
-        content: url("Guadaprueba2/parada1small.png");
-      }
-      .iconos a:nth-child(3) img {
-        content: url("Guadaprueba2/parada2small.png");
-      }
-      .iconos a:nth-child(4) img {
-        content: url("Guadaprueba2/parada3small.png");
-      }
-      .iconos a:nth-child(5) img {
-        content: url("Guadaprueba2/puntoencuentro2small.png");
-      }
-    }
+  .fila2 img,
+  .fila3 img {
+    width: 90px; /* Un poco más pequeño para asegurar */
+    max-width: 90px;
+  }
 
+  /* Eliminamos el margin-top del botón de mesa si molesta */
+  .fila3 a:first-child img {
+    margin-top: 0 !important; /* Anula el estilo inline */
+  }
+}
 
-    /* ====== MOBILE MUY PEQUEÑO ====== */
-    @media (max-width: 480px) {
-      .iconos img {
-        width: 80px; /* íconos aún más chicos */
-      }
-    }
+/* ====== MOBILE MUY PEQUEÑO ====== */
+@media (max-width: 480px) {
+  .fila2 img,
+  .fila3 img {
+    width: 75px; /* Aún más pequeños */
+    max-width: 75px;
+  }
+
+  .fila1 img {
+    max-width: 200px;
+  }
+}
   </style>
 </head>
 <body>
